@@ -1,7 +1,7 @@
 import "./Login.css";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { preloadImages, Oauth } from "../../Globals/Globals";
+import { preloadImages} from "../../Globals/Globals";
 import Spinner from "../../Globals/Spinner/Spinner";
 import brain from "../../../Assets/brain-icon.svg";
 import google from "../../../Assets/google.svg";
@@ -19,11 +19,7 @@ function LogIn() {
         navigate("/signIn");
     };
 
-    const handleGoogle = () => {
-        if (Oauth) {
-            window.location.href = Oauth;
-        }
-    };
+   
 
     const appleClicked = () => {
         setClick(true);
@@ -72,7 +68,7 @@ function LogIn() {
             </div>
 
             <div className="loginOptions">
-                <button className="auths google" onClick={handleGoogle}>
+                <button className="auths google" onClick={handleNavigation}>
                     <div className="authImageDiv">
                         <img src={google} alt="" />
                     </div>
